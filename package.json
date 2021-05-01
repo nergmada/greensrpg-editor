@@ -1,0 +1,37 @@
+{
+  "name": "greensrpg-developer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.html",
+  "nodejs": true,
+  "scripts": {
+    "serve": "npx webpack serve",
+    "watch": "rm -rf ./build && npx webpack --watch",
+    "build": "rm -rf ./build && npx webpack --env MODE=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@beyonk/svelte-datepicker": "^11.0.1",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.4",
+    "extract-css-chunks-webpack-plugin": "^4.9.0",
+    "html-webpack-plugin": "^5.3.1",
+    "json5": "^2.2.0",
+    "json5-loader": "^4.0.1",
+    "nwjs-webpack-plugin": "^0.5.0",
+    "sass": "^1.32.12",
+    "sass-breakpoints": "^2.1.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "svelte": "^3.37.0",
+    "svelte-loader": "^3.1.1",
+    "svelte-select": "^3.17.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

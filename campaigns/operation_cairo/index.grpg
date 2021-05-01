@@ -1,0 +1,7 @@
+{
+    name: "Adam Green's Operation Cairo",
+    description: "file:./description.txt",
+    time: -3483401400,
+    current_map: "map_1",
+    data: "json5:./external.json5"
+}
