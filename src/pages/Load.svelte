@@ -4,6 +4,7 @@
     import View from 'components/Frames/View';
     import VerticalCenter from 'components/Frames/VerticalCenter';
     import {editableCampaign} from 'lib/store';
+    import campaignTemplate from 'lib/templates/campaign';
 
     const handler = () => {
         const uploader = document.createElement('input');
@@ -23,6 +24,11 @@
         <VerticalCenter>
             <div class="center">
                 <h1>Green's RPG Development Tool</h1>
+                <button on:click={() => {
+                    $editableCampaign = {
+                        ...campaignTemplate,
+                    }
+                }}>New</button>
                 <button on:click={handler}>Load</button>
             </div>
         </VerticalCenter>

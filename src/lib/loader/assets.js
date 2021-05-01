@@ -2,8 +2,9 @@ import fs from 'fs';
 
 
 async function get(root, type) {
-    const exists = await fs.promises.stat(`${root}/assets/${type}`);
-    if (!exists) {
+    try {
+        const exists = await fs.promises.stat(`${root}/assets/${type}`);
+    } catch(err) {
         await fs.promises.mkdir(`${root}/assets/${type}`)
         return [];
     }
@@ -16,8 +17,9 @@ async function get(root, type) {
 }
 
 export default async function(json, root) {
-    const assetsExist = await fs.promises.stat(`${root}/assets`);
-    if (!assetsExist) {
+    try {
+        await fs.promises.stat(`${root}/assets`);
+    } catch(err) {
         await fs.promises.mkdir(`${root}/assets`);
     }
     return {

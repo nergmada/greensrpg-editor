@@ -6,9 +6,9 @@
         value: v,
         label: v,
     }))
-    let selectedValue = items[0];
+    let selectedValue = items.length > 0 ? items[0] : null;
     $: {
-        value = selectedValue.value;
+        if (selectedValue && selectedValue.value) value = selectedValue.value;
     }
 </script>
 <div style="color: initial;">
