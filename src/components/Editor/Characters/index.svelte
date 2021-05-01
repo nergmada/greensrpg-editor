@@ -2,6 +2,7 @@
     import Editor from './Editor.svelte';
     import template from 'lib/templates/character';
     export let characters = [];
+    export let images = [];
     export let inview = {};
     let active = 0;
     characters = [...(characters ? characters : []), {
@@ -44,7 +45,7 @@
                 active = characters.length - 2;
             }}>Save</button>
         {:else}
-            <Editor bind:character={characters[active]} />
+            <Editor bind:images bind:character={characters[active]} />
         {/if}
     </div>
 </div>

@@ -38,7 +38,10 @@
         {#if active === 0}
             <Overview bind:campaign bind:inview />
         {:else if active === 1}
-            <Characters bind:characters={campaign.player_characters} bind:inview />
+            <Characters 
+                bind:images={campaign.images}
+                bind:characters={campaign.player_characters} 
+                bind:inview />
         {:else if active === 2}
             <Locations 
                 bind:locations={campaign.locations} 

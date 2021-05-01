@@ -24,6 +24,7 @@
     <p>Start Map</p>
     <div style="color: initial;">
         <Dropdown 
+            append="image"
             options={campaign.images.map(v => v.name)} 
             bind:value={campaign.current_map}
             inputStyles="background-color: #222; color: #fff;" />
@@ -31,6 +32,7 @@
     <p>Maps</p>
     <div style="color: initial;">
         <MultiDropdown 
+            append="image"
             options={campaign.images.map(v => v.name)} 
             bind:value={campaign.maps}
             inputStyles="background-color: #222; color: #fff;" />

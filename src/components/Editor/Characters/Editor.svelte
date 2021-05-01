@@ -3,8 +3,12 @@
     import Type from './Type.svelte';
     import Edge from './Edge.svelte';
     import ItemList from 'components/ItemList.svelte';
+    import MultiDropdown from 'components/MultiDropdown.svelte';
     import Abilities from './Abilities.svelte';
+    
     export let character = null;
+    export let images = [];
+    
     if (!character.stats) character.stats = [];
 </script>
 
@@ -45,6 +49,13 @@
 <h4>Abilities</h4>
 <ItemList bind:list={character.abilities} />
 <Abilities bind:list={character.abilities} />
+
+<h4>Images</h4>
+<MultiDropdown 
+    append="image"
+    options={images.map(v => v.name)} 
+    bind:value={character.images}
+    inputStyles="background-color: #222; color: #fff;" />
 
 <style>
     input {

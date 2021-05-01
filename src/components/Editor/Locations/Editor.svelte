@@ -18,12 +18,14 @@
 
 <h4>Images</h4>
 <MultiDropdown 
+    append="image"
     options={images.map(v => v.name)} 
     bind:value={location.images}
     inputStyles="background-color: #222; color: #fff;" />
 
 <h4>Location Music</h4>
 <Dropdown 
+    append="music"
     options={music.map(v => v.name)} 
     bind:value={location.audio}
     inputStyles="background-color: #222; color: #fff;" />
