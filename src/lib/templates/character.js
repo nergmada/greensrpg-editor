@@ -27,5 +27,6 @@ export default {
         }
     },
     inventory: [],
-    abilities: []
+    abilities: [],
+    color: "#000099",
 }

@@ -59,6 +59,8 @@
     options={images.map(v => v.name)} 
     bind:value={character.images}
     inputStyles="background-color: #222; color: #fff;" />
+<h4>Player Color</h4>
+<input type="color" bind:value={character.color} />
 
 <style>
     input {
