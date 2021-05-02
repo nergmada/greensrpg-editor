@@ -40,6 +40,9 @@
 <ItemList bind:list={npc.abilities} />
 <Abilities bind:list={npc.abilities} />
 
+<h4>NPC Color</h4>
+<input type="color" bind:value={npc.color} />
+
 <style>
     input {
         width: 100%;

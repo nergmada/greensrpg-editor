@@ -11,5 +11,6 @@ export default {
     bio: "",
     private_bio: "",
     inventory: [],
-    abilities: []
+    abilities: [],
+    color: "#660000"
 }
