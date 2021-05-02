@@ -8,7 +8,11 @@
     "serve": "npx webpack serve",
     "watch": "rm -rf ./build && npx webpack --watch",
     "build": "rm -rf ./build && npx webpack --env MODE=production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ ."
+  },
+  "build": {
+      "nwVersion": "0.53.0"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +26,7 @@
     "html-webpack-plugin": "^5.3.1",
     "json5": "^2.2.0",
     "json5-loader": "^4.0.1",
+    "nwjs-builder-phoenix": "^1.15.0",
     "nwjs-webpack-plugin": "^0.5.0",
     "sass": "^1.32.12",
     "sass-breakpoints": "^2.1.0",
