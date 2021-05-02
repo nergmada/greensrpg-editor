@@ -1,4 +1,5 @@
 <script>
+    import sha256 from 'js-sha256';
     import Editor from './Editor.svelte';
     import template from 'lib/templates/character';
     export let characters = [];
@@ -8,6 +9,10 @@
     characters = [...(characters ? characters : []), {
         new: true,
     }]
+    $: characters = characters.map(c => ({
+        ...c,
+        player_name: c.new ? null : sha256.create().update(c.name + new Date()).hex().slice(0, 8)
+    }))
     $: inview = characters[active];
 </script>
 <div>
@@ -31,7 +36,7 @@
         {#if characters[active].new}
             <p>Name</p>
             <input bind:value={characters[active].name} type="text" placeholder="Name" />
-            <button disabled={characters[active].name === 0} on:click={() => {
+            <button disabled={!characters[active].name || characters[active].name.length === 0} on:click={() => {
                 characters = [
                     ...characters.slice(0, -1),
                     {

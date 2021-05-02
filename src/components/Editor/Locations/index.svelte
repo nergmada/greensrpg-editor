@@ -32,7 +32,7 @@
         {#if locations[active].new}
             <p>Name</p>
             <input bind:value={locations[active].name} type="text" placeholder="Name" />
-            <button disabled={locations[active].name === 0} on:click={() => {
+            <button disabled={!locations[active].name || locations[active].name.length === 0} on:click={() => {
                 locations = [
                     ...locations.slice(0, -1),
                     {

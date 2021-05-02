@@ -15,6 +15,9 @@
 <h4>Name</h4>
 <input bind:value={character.name} type="text" placeholder="Name" />
 
+<h4>Short Description</h4>
+<input bind:value={character.short_description} type="text" placeholder="Short Description" />
+
 <h4>Description</h4>
 <textarea bind:value={character.bio} placeholder="Character Description" />
 

@@ -8,6 +8,7 @@ export default (campaign = {}) => {
         player_characters: campaign.player_characters ? campaign.player_characters.filter(v => !v.new) : [],
         npcs: campaign.npcs ? campaign.npcs.filter(v => !v.new) : [],
         locations: campaign.locations ? campaign.locations.filter(v => !v.new) : [],
+        acts: campaign.acts.slice(0,-1)
     }
 
     const element = document.createElement('input');

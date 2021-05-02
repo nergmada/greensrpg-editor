@@ -32,7 +32,7 @@
         {#if npcs[active].new}
             <p>Name</p>
             <input bind:value={npcs[active].name} type="text" placeholder="Name" />
-            <button disabled={npcs[active].name === 0} on:click={() => {
+            <button disabled={!npcs[active].name || npcs[active].name.length === 0} on:click={() => {
                 npcs = [
                     ...npcs.slice(0, -1),
                     {
