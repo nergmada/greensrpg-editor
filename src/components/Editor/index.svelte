@@ -1,4 +1,5 @@
 <script>
+    import Tree from 'components/Tree';
     import Overview from './Overview.svelte';
     import Characters from './Characters';
     import Locations from './Locations';
@@ -13,6 +14,7 @@
         'Characters', 
         'Locations', 
         'NPCs',
+        'Tree',
         'Reload Assets',
         'Save'
     ];
@@ -22,19 +24,19 @@
 <div class="edit">
     <div class="menu scrollable">
         {#each titles as title, i}
-            {#if campaign.root || i !== 4}
+            {#if campaign.root || i !== 5}
                 <button class:active={active === i} on:click={() => {
-                    if (i === 4) loadAssets(campaign, campaign.root).then(c => {
+                    if (i === 5) loadAssets(campaign, campaign.root).then(c => {
                         campaign = c;
                     })
-                    else if (i === 5) save(campaign);
+                    else if (i === 6) save(campaign);
                     else active = i;
                 }}>{title}</button>
             {/if}
         {/each}
     </div>
 
-    <div class="scrollable">
+    <div class="editor" class:scrollable={active !== 4}>
         {#if active === 0}
             <Overview bind:campaign bind:inview />
         {:else if active === 1}
@@ -55,6 +57,8 @@
                 bind:images={campaign.images}
                 bind:music={campaign.music}
             />
+        {:else if active === 4}
+            <Tree bind:tree={campaign.tree} bind:inview />
         {/if}
     </div>
 </div>
@@ -95,5 +99,8 @@
     button:hover {
         box-shadow: none;
         background-color: #444444;
+    }
+    .editor {
+        height: calc(100% - 3rem);
     }
 </style>

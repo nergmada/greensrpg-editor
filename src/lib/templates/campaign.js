@@ -4,5 +4,9 @@ export default {
     time: 1,
     current_map: "",
     images: [],
-    music: []
+    music: [],
+    tree: {
+        root: [],
+        leaves: []
+    }
 }
