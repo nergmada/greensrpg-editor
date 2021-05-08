@@ -13,6 +13,8 @@
             children: [],
         }
     ]
+    title = "";
+    description = "";
 }}>Add</button>
 <input bind:value={title} type="text" placeholder="title" />
 <textarea bind:value={description} placeholder="description" />
